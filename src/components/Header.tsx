@@ -9,7 +9,7 @@ interface HeaderProps {
 }
 
 export function Header({ tasksCounter }: HeaderProps) {
-  // const tasksCounterText = TODO render 'tarefa' if tasksCounter equals 1, otherwise render 'tarefas'
+  const tasksCounterText = tasksCounter !== 1 ? `tarefas` : `tarefa`;
   
   return (
     <View style={styles.container}>
@@ -17,7 +17,7 @@ export function Header({ tasksCounter }: HeaderProps) {
       
       <View style={styles.tasks}>
         <Text style={styles.tasksCounter}>Você tem </Text>
-        {/* <Text style={styles.tasksCounterBold}>{tasksCounter} {tasksCounterText}</Text> */}
+        <Text style={styles.tasksCounterBold}>{tasksCounter} {tasksCounterText}</Text>
       </View>
     </View>
   )
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#8257E5',
     justifyContent: 'space-between',
     alignItems: 'center',
-    flexDirection: 'row'
+    flexDirection: 'column'
   },
   tasks: {
     alignItems: 'center',
